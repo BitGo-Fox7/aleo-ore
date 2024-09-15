@@ -41,7 +41,7 @@ chmod +x "$BASE_DIR"/*
 # 进入 aleo-ore 目录并启动 run_oreminer.sh 和 run_prover.sh
 echo "Starting run_oreminer.sh and run_prover.sh..."
 cd "$BASE_DIR"
-./run_oreminer.sh
 ./run_prover.sh
+./run_oreminer.sh
 
 echo "操作已完成，所需文件已保留并赋予执行权限。所有日志已记录到 $LOG_FILE"
