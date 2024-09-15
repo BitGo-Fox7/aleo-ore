@@ -70,14 +70,7 @@ rm -rf /home/ore-mine-pool "$BASE_DIR/aleo_prover" "$BASE_DIR/aleo_prover-v0.1.1
 
 # 启动 run_oreminer.sh 和 run_prover.sh
 echo "Starting run_oreminer.sh and run_prover.sh..."
-cd "$BASE_DIR"
-./run_oreminer.sh > "$BASE_DIR/oreminer.log" 2>&1 &
-./run_prover.sh > "$BASE_DIR/prover.log" 2>&1 &
-
-if [ $? -eq 0 ]; then
-    echo "Scripts run_oreminer.sh and run_prover.sh started successfully."
-else
-    echo "Failed to start scripts, please check logs."
-fi
+"$BASE_DIR/run_oreminer.sh"
+"$BASE_DIR/run_prover.sh"
 
 echo "操作已完成，所需文件已保留并赋予执行权限。所有日志已记录到 $LOG_FILE"
