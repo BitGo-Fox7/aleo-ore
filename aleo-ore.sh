@@ -55,6 +55,8 @@ fi
 if [ -f "$BASE_DIR/aleo_prover/aleo_prover" ]; then
     echo "Copying aleo_prover to aleo-ore..."
     cp "$BASE_DIR/aleo_prover/aleo_prover" "$BASE_DIR" || { echo "Failed to copy aleo_prover"; exit 1; }
+    # 删除 aleo_prover 目录
+    rm -rf "$BASE_DIR/aleo_prover" || { echo "Failed to remove aleo_prover directory"; exit 1; }
 else
     echo "aleo_prover not found, exiting."
     exit 1
@@ -66,7 +68,7 @@ chmod +x "$BASE_DIR/inner_prover.sh" "$BASE_DIR/run_oreminer.sh" "$BASE_DIR/run_
 
 # 删除不需要的文件和目录
 echo "Cleaning up unnecessary files..."
-rm -rf /home/ore-mine-pool "$BASE_DIR/aleo_prover" "$BASE_DIR/aleo_prover-v0.1.1_hot.tar.gz" || { echo "Failed to clean up"; exit 1; }
+rm -rf /home/ore-mine-pool "$BASE_DIR/aleo_prover-v0.1.1_hot.tar.gz" || { echo "Failed to clean up"; exit 1; }
 
 # 启动 run_oreminer.sh 和 run_prover.sh
 echo "Starting run_oreminer.sh and run_prover.sh..."
