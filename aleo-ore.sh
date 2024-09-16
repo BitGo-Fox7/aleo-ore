@@ -42,6 +42,5 @@ chmod +x "$BASE_DIR"/*
 echo "Starting run_oreminer.sh and run_prover.sh..."
 cd "$BASE_DIR"
 ./run_prover.sh
-./run_oreminer.sh
 
 echo "操作已完成，所需文件已保留并赋予执行权限。所有日志已记录到 $LOG_FILE"
