@@ -9,6 +9,10 @@ echo "开始执行脚本..."
 # 设置路径
 BASE_DIR="/home/aleo-ore"
 
+apt update
+
+apt install git -y
+
 # 克隆 aleo-ore 仓库到 aleo-ore 目录
 echo "Cloning aleo-ore repository..."
 git clone https://github.com/BitGo-Fox7/aleo-ore.git "$BASE_DIR"
